@@ -1,0 +1,29 @@
+{
+    "name": "mavenbird/module-predefined-admin-order-comments",
+    "description": "The Predefined Admin Order Comments module enhances Magento 2's order management by allowing administrators to quickly add standardized comments to orders. This module provides predefined comment templates that streamline communication, improve consistency, and save time when managing and processing orders within the admin panel.",
+    "require": {
+        "php": ">=8.0.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+      "OSL-3.0",
+      "AFL-3.0"
+    ],
+    "authors": [
+        {
+          "name": "Mavenbird",
+          "email": "support@mavenbird.com",
+          "homepage": "https://www.mavenbird.com",
+          "role": "Technical Support"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4":  { 
+            "Mavenbird\\PredefinedAdminOrderComments\\": ""
+        }
+    }
+  }

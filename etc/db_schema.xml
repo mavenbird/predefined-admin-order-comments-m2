@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mavenbird Technologies Private Limited
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://mavenbird.com/Mavenbird-Module-License.txt
+ *
+ * =================================================================
+ *
+ * @category   Mavenbird
+ * @package    Mavenbird_PredefinedAdminOrderComments
+ * @author     Mavenbird Team
+ * @copyright  Copyright (c) 2018-2024 Mavenbird Technologies Private Limited ( http://mavenbird.com )
+ * @license    http://mavenbird.com/Mavenbird-Module-License.txt
+ */ 
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="mavenbird_predefined_admin_order_comments" resource="default" engine="innodb" comment="Mavenbird Predefined Admin Order Comments Table">
+        <column xsi:type="smallint" name="comment_id" padding="6" unsigned="false" nullable="false" identity="true" comment="Comment ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Comment Title"/>
+        <column xsi:type="smallint" name="is_active" padding="6" unsigned="false" nullable="false" default="1" comment="Active Status"/>
+        <column xsi:type="text" name="content" nullable="true" comment="Comment Content"/>
+        <column xsi:type="timestamp" name="creation_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+        <column xsi:type="timestamp" name="update_time" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Modification Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="comment_id"/>
+        </constraint>
+        <index referenceId="MAVENBIRD_PREDEFINED_ADMIN_ORDER_COMMENTS_TITLE_CONTENT" indexType="fulltext">
+            <column name="title"/>
+            <column name="content"/>
+        </index>
+    </table>
+    <table name="mavenbird_predefined_admin_order_comments_status" resource="default" engine="innodb" comment="Mavenbird Predefined Admin Order Comments Status Table">
+        <column xsi:type="smallint" name="comment_id" padding="6" unsigned="false" nullable="false" comment="Comment ID"/>
+        <column xsi:type="varchar" name="status" nullable="false" length="32" comment="Order Status"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="comment_id"/>
+            <column name="status"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="MAVENBIRD_PREDEFINED_ADMIN_ORDER_COMMENTS_STATUS_COMMENT_ID_MAVENBIRD_PREDEFINED_ADMIN_ORDER_COMMENTS_COMMENT_ID" table="mavenbird_predefined_admin_order_comments_status" column="comment_id" referenceTable="mavenbird_predefined_admin_order_comments" referenceColumn="comment_id" onDelete="CASCADE"/>
+        <index referenceId="MAVENBIRD_PREDEFINED_ADMIN_ORDER_COMMENTS_STATUS_STATUS" indexType="btree">
+            <column name="status"/>
+        </index>
+    </table>
+    <table name="mavenbird_predefined_admin_order_comments_store" resource="default" engine="innodb" comment="Mavenbird Predefined Admin Order Comments To Store Linkage Table">
+        <column xsi:type="smallint" name="comment_id" padding="6" unsigned="false" nullable="false" comment="Comment ID"/>
+        <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" comment="Store ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="comment_id"/>
+            <column name="store_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="MAVENBIRD_PREDEFINED_ADMIN_ORDER_COMMENTS_STORE_COMMENT_ID_MAVENBIRD_PREDEFINED_ADMIN_ORDER_COMMENTS_COMMENT_ID" table="mavenbird_predefined_admin_order_comments_store" column="comment_id" referenceTable="mavenbird_predefined_admin_order_comments" referenceColumn="comment_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="MAVENBIRD_PREDEFINED_ADMIN_ORDER_COMMENTS_STORE_STORE_ID_STORE_STORE_ID" table="mavenbird_predefined_admin_order_comments_store" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE"/>
+        <index referenceId="MAVENBIRD_PREDEFINED_ADMIN_ORDER_COMMENTS_STORE_STORE_ID" indexType="btree">
+            <column name="store_id"/>
+        </index>
+    </table>
+</schema>
