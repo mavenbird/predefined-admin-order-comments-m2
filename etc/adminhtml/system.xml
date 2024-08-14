@@ -21,12 +21,9 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="Mavenbird" translate="label" sortOrder="1001">
-            <label>Mavenbird Extensions</label>
-        </tab>
         <section id="predefinedadminordercomments" translate="label" type="text" sortOrder="1006" showInDefault="1" showInWebsite="0" showInStore="0">
             <label>Predefined Admin Order Comments</label>
-            <tab>Mavenbird</tab>
+           <tab>mavenbird</tab>
             <resource>Mavenbird_PredefinedAdminOrderComments::predefinedadminordercomments_configuration</resource>
             <group id="general" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>General</label>
