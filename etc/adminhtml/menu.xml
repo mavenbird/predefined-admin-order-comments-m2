@@ -25,8 +25,9 @@
 
         <add id="Mavenbird_PredefinedAdminOrderComments::Heading" title="Predefined Admin Order Comments" module="Mavenbird_PredefinedAdminOrderComments" sortOrder="20" parent="Magento_Backend::mbmenu" resource="Mavenbird_PredefinedAdminOrderComments::Heading" />
         <add id="Mavenbird_PredefinedAdminOrderComments::configuration" title="Configuration" module="Mavenbird_PredefinedAdminOrderComments" sortOrder="10" parent="Mavenbird_PredefinedAdminOrderComments::Heading" action="adminhtml/system_config/edit/section/predefinedadminordercomments" resource="Mavenbird_PredefinedAdminOrderComments::configuration"/>
+        <add id="Mavenbird_PredefinedAdminOrderComments::content_admin_order_comments" title="Comments" translate="title" module="Mavenbird_PredefinedAdminOrderComments" sortOrder="10" parent="Mavenbird_PredefinedAdminOrderComments::Heading" action="predefined/comment/index" resource="Mavenbird_PredefinedAdminOrderComments::admin_order_comments"/>
 
         <add id="Mavenbird_PredefinedAdminOrderComments::content_predefined" title="Predefined Admin Order Comments" translate="title" module="Mavenbird_PredefinedAdminOrderComments" sortOrder="80" parent="Magento_Backend::content" resource="Mavenbird_PredefinedAdminOrderComments::predefined"/>
-        <add id="Mavenbird_PredefinedAdminOrderComments::content_admin_order_comments" title="Comments" translate="title" module="Mavenbird_PredefinedAdminOrderComments" sortOrder="10" parent="Mavenbird_PredefinedAdminOrderComments::content_predefined" action="predefined/comment/index" resource="Mavenbird_PredefinedAdminOrderComments::admin_order_comments"/>
+        <add id="Mavenbird_PredefinedAdminOrderComments::content_admin_order_comments_content" title="Comments" translate="title" module="Mavenbird_PredefinedAdminOrderComments" sortOrder="10" parent="Mavenbird_PredefinedAdminOrderComments::content_predefined" action="predefined/comment/index" resource="Mavenbird_PredefinedAdminOrderComments::admin_order_comments"/>
     </menu>
 </config>
