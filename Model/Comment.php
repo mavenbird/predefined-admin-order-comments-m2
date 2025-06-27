@@ -24,6 +24,7 @@ use Magento\Framework\Model\Context;
 use Magento\Framework\Registry;
 use Mavenbird\PredefinedAdminOrderComments\Api\Data\CommentInterface;
 use Mavenbird\PredefinedAdminOrderComments\Model\ResourceModel\Comment as ResourceComment;
+use Mavenbird\PredefinedAdminOrderComments\Model\ResourceModel\Comment\Collection;
 
 class Comment extends AbstractModel implements CommentInterface
 {
@@ -41,8 +42,8 @@ class Comment extends AbstractModel implements CommentInterface
     public function __construct(
         Context $context,
         Registry $registry,
-        ResourceComment $resource = null,
-        ResourceComment\Collection $resourceCollection = null
+        ?ResourceComment $resource = null,
+        ?Collection $resourceCollection = null
     ) {
         parent::__construct($context, $registry, $resource, $resourceCollection);
     }
