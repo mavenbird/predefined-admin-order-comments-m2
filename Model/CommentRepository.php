@@ -119,7 +119,7 @@ class CommentRepository implements CommentRepositoryInterface
      * @param \Magento\Framework\Api\SearchCriteriaInterface $criteria
      * @return \Mavenbird\PredefinedAdminOrderComments\Api\Data\CommentSearchResultsInterface
      */
-    public function getList(\Magento\Framework\Api\SearchCriteriaInterface $criteria)
+    public function getList(?\Magento\Framework\Api\SearchCriteriaInterface $criteria = null)
     {
         /** @var \Mavenbird\PredefinedAdminOrderComments\Model\ResourceModel\Comment\Collection $collection */
         $collection = $this->commentCollectionFactory->create();
