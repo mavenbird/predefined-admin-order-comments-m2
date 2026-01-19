@@ -48,11 +48,11 @@ interface CommentRepositoryInterface
     /**
      * Retrieve predefined comments matching the specified criteria.
      *
-     * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
+     * @param ?\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
      * @return \Mavenbird\PredefinedAdminOrderComments\Api\Data\CommentSearchResultsInterface
      * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);
+    public function getList(?\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);
 
     /**
      * Delete a predefined comment.

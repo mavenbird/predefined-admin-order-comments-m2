@@ -47,7 +47,7 @@ class Collection extends CommentCollection implements SearchResultInterface
      * @param string $resourceModel
      * @param string $model
      * @param \Magento\Framework\DB\Adapter\AdapterInterface|string|null $connection
-     * @param \Magento\Framework\Model\ResourceModel\Db\AbstractDb $resource
+     * @param ?\Magento\Framework\Model\ResourceModel\Db\AbstractDb $resource
      *
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
@@ -116,7 +116,7 @@ class Collection extends CommentCollection implements SearchResultInterface
     /**
      * Set search criteria.
      *
-     * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
+     * @param ?\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
      * @return $this
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
