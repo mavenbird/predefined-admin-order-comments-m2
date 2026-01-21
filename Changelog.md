@@ -1,4 +1,4 @@
-1.3.0 – january 12, 2025
+1.3.0 – january 12, 2026
 =============
 * Upgraded for compatibility with Magento 2.4.8-p3.
 * Verified and compatible with PHP version 8.4.
